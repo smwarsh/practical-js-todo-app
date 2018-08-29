@@ -66,15 +66,12 @@ var todoList = {
   }
 };
 
-var displayTodosButton = document.getElementById('displayTodosButton'); // access displayTodosButton
-var toggleAllButton = document.getElementById('toggleAllButton'); // access toggleAllButton
+var handlers = {
+  displayTodos: function () {
+    todoList.displayTodos();
+  },
+  toggleAll: function () {
+    todoList.toggleAll();
+  }
+};
 
-// displayTodos method when you click
-displayTodosButton.addEventListener('click', function () {
-  todoList.displayTodos();
-});
-
-// toggleAll method when you click the toggleAllButton
-toggleAllButton.addEventListener('click', function () {
-  todoList.toggleAll();
-});
