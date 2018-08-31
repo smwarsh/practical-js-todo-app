@@ -101,3 +101,24 @@ var handlers = {
   }
 };
 
+var view = {
+  displayTodos: function () {
+    
+    var todosUL = document.querySelector('ul');
+    todosUL.innerHTML = '';
+    
+    for (var i = 0; i < todoList.todos.length; i++) {
+      var todoLI = document.createElement('li');
+      todoLI.textContent = todoList.todos[i].todoText;
+      todosUL.appendChild(todoLI);
+    }
+  }
+};
+
+
+
+
+
+
+
+
