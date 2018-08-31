@@ -70,6 +70,32 @@ var handlers = {
   displayTodos: function () {
     todoList.displayTodos();
   },
+  addTodo: function () {
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = '';
+  },
+  changeTodo: function () {
+    var changeTodoPosition = document.getElementById('changeTodoPosition');
+    var changeTodoNewText = document.getElementById('changeTodoNewText');
+    todoList.changeTodo(changeTodoPosition.valueAsNumber, changeTodoNewText.value);
+    
+    // reset input fields to empty
+    changeTodoPosition.value = '';
+    changeTodoNewText.value = '';
+  },
+  deleteTodo: function () {
+    var deleteTodoPosition = document.getElementById('deleteTodoPosition');
+    todoList.deleteTodo(deleteTodoPosition.valueAsNumber);
+    
+    deleteTodoPosition.value = '';
+  },
+  toggleCompleted: function () {
+    var toggleTodoPosition = document.getElementById('toggleTodoPosition');
+    todoList.toggleCompleted(toggleTodoPosition.valueAsNumber);
+    
+    toggleTodoPosition.value = '';
+  },
   toggleAll: function () {
     todoList.toggleAll();
   }
